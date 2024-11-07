@@ -1,5 +1,5 @@
-# Java FX
+# Object Oriented Programming
 
-This project covers Java FX basics
+This project covers basics of object-oriented programming paradigm
 
 
