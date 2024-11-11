@@ -1,6 +1,6 @@
 class MyFirstClass:
     def __init__(self):
-        print("MyFirstClass()")
+        print("Constructor")
 
 print(f"{MyFirstClass()}")
 print(f"{MyFirstClass()}")

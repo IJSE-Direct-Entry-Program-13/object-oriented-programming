@@ -3,6 +3,7 @@ void main(){
     c1 = new Customer();
     c2 = new Customer();
     c3 = new Customer();
+
     c1.id = 1;
     c1.name = "Kasun";
     c1.address = "Galle";

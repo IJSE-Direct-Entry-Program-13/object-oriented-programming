@@ -2,6 +2,7 @@ public class MyThirdClass {
 
     static {
         System.out.println("Static Initializer1: MyThirdClass is being initialized");
+
     }
 
     public MyThirdClass() {
