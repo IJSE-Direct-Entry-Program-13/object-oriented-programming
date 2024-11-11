@@ -64,9 +64,6 @@ public class AbcInstitute {
     }
 
     public static boolean transferEmployee(Employee employee, Branch newBranch) {
-        if (!branches.contains(newBranch)) {
-            return false;
-        }
         for (int i = 0; i < branches.size(); i++) {
             Branch branch = branches.get(i);
             if (branch == newBranch) continue;
@@ -89,7 +86,7 @@ public class AbcInstitute {
         }
         System.out.printf("BRANCH NAME: %s %n", branch.name);
         System.out.printf("BRANCH CONTACT: %s %n", branch.contact);
-        System.out.printf("BRANCH MANAGER: %s %n", branch.branchManager);
+        System.out.printf("BRANCH MANAGER: %s %n", branch.branchManager.id + "-" + branch.branchManager.name);
         System.out.printf("BRANCH EMPLOYEE COUNT: %d %n", branch.employeeList.size());
         for (int i = 0; i < branch.employeeList.size(); i++) {
             if (branch.branchManager == branch.employeeList.get(i)) continue;
@@ -102,6 +99,7 @@ public class AbcInstitute {
             Branch b = branches.get(i);
             if (b.employeeList.contains(employee)) {
                 System.out.printf("ID=%s, NAME=%s, CONTACT=%s %n", employee.id, employee.name, employee.contact);
+                return;
             }
         }
         System.out.println("Employee not found");
@@ -110,10 +108,12 @@ public class AbcInstitute {
     public static void printCompanyProfile() {
         System.out.printf("Company Profile %n");
         System.out.printf("BRANCHES COUNT: %s %n", branches.size());
+        System.out.println("========================");
         int totalEmployeeCount = 0;
         for (int i = 0; i < branches.size(); i++) {
             printBranchReport(branches.get(i));
             totalEmployeeCount += branches.get(i).employeeList.size();
+            System.out.println("========================");
         }
         System.out.printf("TOTAL EMPLOYEE COUNT: %s %n", totalEmployeeCount);
     }
