@@ -1,0 +1,32 @@
+class Child extends Parent {
+    static int a;
+    public static void <clinit>(){
+        a = 70;
+        {
+           System.out.println("Child class is being initialized");
+        }
+    }
+    int c;
+    public void <init>(){
+        this(20, a);
+        System.out.println("Child()");
+        System.out.println("a=" + a);
+        System.out.println("c=" + c);
+    }
+    public void <init>(int a, int b){
+        super(b);
+            {
+                System.out.println("Child Instance Initializer 1");
+                c = this.b;
+            }
+            c = -30;
+            {
+                System.out.println("Child Instance Initializer 2");
+                System.out.println("c=" + c);
+                c = this.a;
+            }
+        System.out.println("Child(int)");
+        System.out.println("a=" + a);
+        System.out.println("c=" + c);
+    }
+}

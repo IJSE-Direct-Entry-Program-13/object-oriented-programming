@@ -1,4 +1,4 @@
-public class Demo extends Object {
+public class Demo {
     static {
         System.out.println("Demo class is being initialized");
     }
@@ -8,7 +8,7 @@ public class Demo extends Object {
     }
 }
 
-class Parent extends Object {
+class Parent {
     static int a = 20;
     static {
         System.out.println("Parent class is being initialized");
