@@ -7,4 +7,7 @@ public class Demo extends Object {
     public static void main(String[] args){
         new Child();
     }
+    public void <init>(){
+        super();
+    }
 }

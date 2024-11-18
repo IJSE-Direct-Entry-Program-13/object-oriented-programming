@@ -1,0 +1,3 @@
+Demo class is being initialized
+Parent class is being initialized
+Child class is being initialized
