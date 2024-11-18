@@ -1,3 +1,19 @@
 Demo class is being initialized
 Parent class is being initialized
 Child class is being initialized
+Parent Instance Initializer
+b=20
+Parent()
+b=20
+Parent(int)
+b=70
+Child Instance Initializer 1
+Child Instance Initializer 2
+c=-30
+Child(int)
+a=20
+c=70
+Child()
+a=70
+c=70
+
