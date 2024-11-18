@@ -1,0 +1,27 @@
+class Parent{
+    static int a;
+    static int b;
+    public static void <clinit>(){
+        a = 20;
+        {
+            System.out.println("Parent class is being initialized");
+            print();
+        }
+        b = 50;
+    }
+    static void print(){
+        System.out.println("a=" + a);
+    }
+    int c;
+    public void <init>(int c){
+        super();
+            {
+                c = a + b;
+                System.out.println("c=" + c);
+             }
+        this.a = c;
+        System.out.println("b=" + b);
+        System.out.println("Parent(int)");
+        print();
+    }
+}

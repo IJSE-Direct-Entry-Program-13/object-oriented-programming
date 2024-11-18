@@ -1,0 +1,27 @@
+public class Demo{
+    static int a;
+    static int b;
+    public static void <clinit>(){
+        a = 20 + getB();
+        {
+            System.out.println("Demo class is being initialized");
+            System.out.println("a=" + a);
+        }
+        b = 10;
+        {
+            a += b;
+        }
+    }
+    public static int getB(){
+            System.out.println("getB()");
+            return b;
+    }
+    public static void main(String[] args) {
+        System.out.println("a="+ a);
+        System.out.println("b="+ b);
+        new Child();
+    }
+    public void <init>(){
+        super();
+    }
+}

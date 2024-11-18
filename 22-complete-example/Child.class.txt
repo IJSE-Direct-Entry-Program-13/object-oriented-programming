@@ -1,0 +1,32 @@
+class Child {
+    static int a;
+    public static void <clinit>(){
+        a = 10;
+        {
+            System.out.println("Child class is being initialized");
+            print();
+        }
+    }
+    static void print(){
+        System.out.println("a=" + a);
+    }
+    int d;
+    public void <init>(){
+        this(b);
+        System.out.println("Child()");
+        System.out.println("c=" + c);
+        System.out.println("a=" + a);
+        System.out.println("b=" + b);
+    }
+    public void <init>(int c){
+        super(a);
+            d = -25;
+            {
+                System.out.println(d = a += b = d + 5);
+                System.out.println("Child instance initializer");
+            }
+        this.c = a + b +c;
+        System.out.println("Child(int)");
+        System.out.println("d=" + d);
+    }
+}
