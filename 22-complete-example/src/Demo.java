@@ -65,7 +65,7 @@ class Child extends Parent{
     }
     int d = -25;
     {
-        System.out.println(d = a += b = d + 5);
+        System.out.println("d=" + (d = a += b = d + 5));
         System.out.println("Child instance initializer");
     }
 }
