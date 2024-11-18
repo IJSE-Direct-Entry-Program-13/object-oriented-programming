@@ -1,4 +1,4 @@
-class Child {
+class Child extends Parent{
     static int a;
     public static void <clinit>(){
         a = 10;

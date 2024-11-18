@@ -1,4 +1,4 @@
-class Parent{
+class Parent extends Object{
     static int a;
     static int b;
     public static void <clinit>(){
