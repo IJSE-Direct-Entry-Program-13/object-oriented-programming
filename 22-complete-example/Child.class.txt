@@ -7,9 +7,6 @@ class Child extends Parent{
             print();
         }
     }
-    static void print(){
-        System.out.println("a=" + a);
-    }
     int d;
     public void <init>(){
         this(b);

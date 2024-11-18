@@ -16,8 +16,8 @@ class Parent extends Object{
     public void <init>(int c){
         super();
             {
-                c = a + b;
-                System.out.println("c=" + c);
+                this.c = a + b;
+                System.out.println("c=" + this.c);
              }
         this.a = c;
         System.out.println("b=" + b);

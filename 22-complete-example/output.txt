@@ -1,0 +1,21 @@
+getB()
+Demo class is being initialized
+a=20
+a=30
+b=10
+Parent class is being initialized
+a=20
+Child class is being initialized
+a=10
+c=70
+b=50
+Parent(int)
+a=10
+d=-10
+Child instance initializer
+Child(int)
+d=-10
+Child()
+c=20
+a=-10
+b=-20
