@@ -5,8 +5,8 @@ class Middle extends Super {
         System.out.println("Static Initializer");
     }
     public void <init>(int value){
+        super();
         super.print();
-
         this.value += value;
         this.print();
         System.out.println("Middle()");
