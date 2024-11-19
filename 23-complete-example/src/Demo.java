@@ -2,6 +2,7 @@ public class Demo {
 
     public static void main(String[] args) {
         System.out.println(new Child(20).getValue());
+        System.out.println(Child.value);
     }
 }
 
