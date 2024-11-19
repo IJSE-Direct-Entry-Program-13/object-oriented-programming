@@ -11,7 +11,12 @@ class Parent{
     {
         System.out.println("Parent instance initializer");
     }
+    public Parent(Integer value){
+        this.value = value;
+        child.print();
+    }
     public Parent(int value) {
+        this(Integer.valueOf(value));
         this.value = value;
         child.print();
     }
