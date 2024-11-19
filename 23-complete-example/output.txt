@@ -1,0 +1,10 @@
+Parent static initializer
+Child Static Initializer
+Parent instance initializer
+value=-5
+value=20
+value=20
+Child instance initializer
+value=20
+value=20
+30

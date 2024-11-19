@@ -11,7 +11,7 @@ class Parent extends Object {
 
     public void <init>(Integer value){
         super();
-            value = -5;
+            this.value = -5;
             {
                 System.out.println("Parent instance initializer");
             }

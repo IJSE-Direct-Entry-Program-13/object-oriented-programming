@@ -1,7 +1,7 @@
 public class Demo {
 
     public static void main(String[] args) {
-        new Child(20);
+        System.out.println(new Child(20).getValue());
     }
 }
 
