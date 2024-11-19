@@ -1,6 +1,8 @@
 public class Demo extends Object {
     public static void <clinit>(){}
-    public void <init>(){}
+    public void <init>(){
+        super();
+    }
     public static void main(String args[]){
         Sub sub = new Sub(10, 5);
         System.out.println(sub.value);

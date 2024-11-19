@@ -12,6 +12,6 @@ class Middle extends Super {
         System.out.println("Middle()");
     }
     int getValue(){
-            return value;
+        return value;
     }
 }
