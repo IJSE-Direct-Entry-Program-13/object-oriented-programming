@@ -9,7 +9,7 @@ class Parent extends Object {
     Child child;
     int value;
 
-    public void <init>(int value){
+    public void <init>(Integer value){
         super();
             value = -5;
             {
@@ -19,6 +19,12 @@ class Parent extends Object {
                 child = (Child) this;
                 child.print();
             }
+        this.value = value;
+        child.print();
+    }
+
+    public void <init>(int value){
+        this(Integer.valueOf(value));
         this.value = value;
         child.print();
     }
