@@ -1,0 +1,16 @@
+value=-10
+Super()
+Static Initializer
+value=-10
+Super()
+value=-10
+value=-10
+Middle()
+value=-10
+value=10
+value=0
+value=-10
+5
+0
+-10
+value=-10

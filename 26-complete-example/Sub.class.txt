@@ -3,7 +3,7 @@ class Sub extends Middle {
     int value;
     public void <init>(int value){
         super(value);
-            this.value = -10;
+            this.value = 10;
         super.print();
         System.out.println("value=" + this.value);
     }
