@@ -5,7 +5,7 @@ class Super extends Object {
         super();
             value = -10;
             {
-                ((Middle)this).value = value;
+                if (this instanceof Sub) ((Middle)this).value = value;
                 print();
             }
         System.out.println("Super()");

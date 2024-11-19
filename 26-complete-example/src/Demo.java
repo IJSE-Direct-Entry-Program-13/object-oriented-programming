@@ -15,7 +15,7 @@ class Super{
         System.out.println("Super()");
     }
     {
-        ((Middle)this).value = value;
+        if (this instanceof Sub) ((Middle)this).value = value;
         print();
     }
     void print(){
