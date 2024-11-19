@@ -1,0 +1,16 @@
+class Sub extends Middle {
+    public static void <clinit>(){}
+    int value;
+    public void <init>(int value){
+        super(value);
+            this.value = -10;
+        super.print();
+        System.out.println("value=" + this.value);
+    }
+    public void <init>(int value, int value2){
+        this(value);
+        this.value = value2;
+        System.out.println("value=" + getValue());
+        ((Sub) this).print();
+    }
+}

@@ -1,0 +1,16 @@
+class Super extends Object {
+    public static void <clinit>(){}
+    int value;
+    public void <init>(){
+        super();
+            value = -10;
+            {
+                ((Middle)this).value = value;
+                print();
+            }
+        System.out.println("Super()");
+    }
+    void print(){
+        System.out.println("value=" + value);
+    }
+}

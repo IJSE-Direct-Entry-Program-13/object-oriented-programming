@@ -1,0 +1,17 @@
+class Middle extends Super {
+    static int value;
+    public static void <clinit>(){
+        value += new Super().value * 2;
+        System.out.println("Static Initializer");
+    }
+    public void <init>(int value){
+        super.print();
+
+        this.value += value;
+        this.print();
+        System.out.println("Middle()");
+    }
+    int getValue(){
+            return value;
+    }
+}
