@@ -1,0 +1,27 @@
+class Child extends Parent {
+    static int value;
+
+    public static void <clinit>(){
+        value = -20;
+        {
+            System.out.println("Child Static Initializer");
+            value += 5;
+        }
+    }
+
+    public void <init>(int value){
+        super(value);
+            {
+                System.out.println("Child instance initializer");
+                print();
+            }
+            {
+                System.out.println("value=" + this.value);
+            }
+        this.value = super.getValue() + 10;
+    }
+
+    void print(){
+        System.out.println("value=" + value);
+    }
+}

@@ -7,7 +7,7 @@ public class Demo {
 
 class Parent{
     Child child;
-    int value;
+    int value = -5;
     {
         System.out.println("Parent instance initializer");
     }

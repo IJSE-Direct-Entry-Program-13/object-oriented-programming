@@ -1,0 +1,12 @@
+public class Demo extends Object{
+
+    public void static <clinit>(){}
+
+    public void <init>(){
+        super();
+    }
+
+    public static void main(String[] args){
+        new Child(20);
+    }
+}

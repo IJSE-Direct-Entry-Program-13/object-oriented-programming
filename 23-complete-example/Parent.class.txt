@@ -1,0 +1,29 @@
+class Parent extends Object {
+
+    public static void <clinit>(){
+        {
+            System.out.println("Parent static initializer");
+        }
+    }
+
+    Child child;
+    int value;
+
+    public void <init>(int value){
+        super();
+            value = -5;
+            {
+                System.out.println("Parent instance initializer");
+            }
+            {
+                child = (Child) this;
+                child.print();
+            }
+        this.value = value;
+        child.print();
+    }
+
+    int getValue(){
+        return value;
+    }
+}
