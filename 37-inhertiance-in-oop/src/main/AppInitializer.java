@@ -32,7 +32,7 @@ interface SuperInterface3 extends MyAnnotation{}
 // enum <- interface
 enum MyEnum implements SuperInterface1{}
 
-// enum <- record
+// record <- interface
 record MyRecord() implements SuperInterface1{}
 
 // class <- annotation
@@ -48,3 +48,20 @@ enum MyEnum2 implements MyAnnotation{
     }
 }
 
+// record <- annotation
+record MyRecord2() implements MyAnnotation{
+    @Override
+    public Class<? extends Annotation> annotationType() {
+        return null;
+    }
+}
+
+// interface MyCrazyInterface extends MyClass{}
+
+// enum MyEnum3 extends MyClass{}
+
+// record MyRecord3() extends MyClass{}
+
+// @interface MyCrazyAnnotation extends MyAnnotation{}
+
+// class MyClass3 extends MyRecord{}
