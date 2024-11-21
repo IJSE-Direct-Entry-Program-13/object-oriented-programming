@@ -6,3 +6,7 @@ public class Demo {
 
     }
 }
+
+// A leaf class (AKA final class in Java) can't be further extended
+final class SuperClass{}
+//class SubClass extends SuperClass{}
