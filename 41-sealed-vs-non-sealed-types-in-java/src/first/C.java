@@ -1,4 +1,4 @@
 package first;
 
-final public class C extends SuperClass{
+final public class C extends MySuperClass{
 }

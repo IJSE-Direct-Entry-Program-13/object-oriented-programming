@@ -9,10 +9,10 @@ public class Demo {
     }
 }
 
-sealed class SuperClass permits A, B, C, MySubClass {}
+sealed class MySuperClass permits A, B, C, MySubClass{}
 
-final class A extends SuperClass{}
-final class B extends SuperClass{}
+final class A extends MySuperClass {}
+final class B extends MySuperClass {}
 
 // final class C extends SuperClass{}
 
