@@ -9,7 +9,7 @@ public class Demo {
 class A{
     int a = 10;
     int getValue(){
-        return a;
+        return ((B)((C)this)).a;
     }
     void print(){
         System.out.println("value=" + getValue());
@@ -21,7 +21,7 @@ class B extends A{
         System.out.println("value=" + ((A)this).getValue());
     }
     int getValue(){
-        return ((C)this).getValue();
+        return super.getValue();
     }
 }
 class C extends B{
@@ -30,6 +30,6 @@ class C extends B{
         super.print();
     }
     int getValue(){
-        return super.a;
+        return super.getValue();
     }
 }
