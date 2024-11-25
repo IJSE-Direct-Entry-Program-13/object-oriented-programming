@@ -2,7 +2,7 @@ Demo.class
 public class Demo extends Object {
     public static void <clinit>(){}
     public static void main(String[] args){
-        new SubClass().print();;
+        new SubClass().print();
     }
     public void <init>(){
         super();

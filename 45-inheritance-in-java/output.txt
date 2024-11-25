@@ -1,0 +1,5 @@
+SuperClass is being initialized
+SubClass is being initialized
+Super Class
+Sub Class
+60

@@ -7,7 +7,7 @@ public class Demo {
 }
 
 class SuperClass {
-    int a = 10;
+    private int a = 10;
     int b = 20;
     static {
         System.out.println("SuperClass is being initialized");
@@ -16,7 +16,9 @@ class SuperClass {
         System.out.println("Super Class");
     }
     void print(int value) {
-        System.out.println(value);
+        print(value);
+        this.print(value);
+        ((SuperClass)this).print(value);
     }
 }
 class SubClass extends SuperClass {
@@ -28,6 +30,9 @@ class SubClass extends SuperClass {
         System.out.println("Sub Class");
     }
     void print() {
-        super.print(a + b + c);
+        super.print( b + c);
+    }
+    void print(int value) {
+        System.out.println("value=" + value);
     }
 }
