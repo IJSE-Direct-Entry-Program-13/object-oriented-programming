@@ -1,0 +1,52 @@
+Demo.class
+public class Demo extends Object {
+    public static void <clinit>(){}
+    public static void main(String[] args){
+        new SubClass().print();;
+    }
+    public void <init>(){
+        super();
+    }
+}
+
+SuperClass.class
+public class SuperClass extends Object {
+    public static void <clinit>(){
+        {
+            System.out.println("SuperClass is being initialized");
+        }
+    }
+    int a;
+    int b;
+    public void <init>(){
+        super();
+            a = 10;
+            b = 20;
+            {
+                System.out.println("Super Class");
+            }
+    }
+    void print(int value){
+        System.out.println(value);
+    }
+}
+
+SubClass.class
+class SubClass extends SuperClass {
+    public static void <clinit>(){
+        {
+            System.out.println("SubClass is being initialized");
+        }
+    }
+    int c;
+    public void <init>(){
+        super();
+            c = 30;
+            {
+                System.out.println("Sub Class");
+            }
+    }
+    void print() {
+        super.print(a + b + c);
+    }
+}
