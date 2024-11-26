@@ -2,6 +2,7 @@ package lk.ijse.dep13.oop.abstraction.controller;
 
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -35,6 +36,7 @@ public class MainSceneController {
 
     private void loadCustomers(){
         ArrayList<CustomerTo> customerList = dataAccess.findAllCustomers();
+        tblCustomers.getItems().clear();
         for (int i = 0; i < customerList.size(); i++) {
             CustomerTo customer = customerList.get(i);
             tblCustomers.getItems().add(new Customer(customer.id(), customer.name(), customer.address()));
@@ -66,7 +68,35 @@ public class MainSceneController {
     }
 
     public void btnSaveOnAction(ActionEvent event) {
+        if (!validateData()) return;
 
+        CustomerTo customer = new CustomerTo(txtId.getText().strip(),
+                txtName.getText().strip(),
+                txtAddress.getText().strip());
+
+        if (dataAccess.saveCustomer(customer)){
+            tblCustomers.getItems().add(new Customer(customer.id(), customer.name(), customer.address()));
+        }else{
+            new Alert(Alert.AlertType.ERROR, "Failed to save the customer, try again").show();
+            txtName.requestFocus();
+            txtName.selectAll();
+        }
+    }
+
+    private boolean validateData(){
+        boolean valid = true;
+        if (txtAddress.getText().strip().length() < 3) {
+            txtAddress.requestFocus();
+            txtAddress.selectAll();
+            valid = false;
+        }
+
+        if (!txtName.getText().strip().matches("[A-Za-z ]+")){
+            txtName.requestFocus();
+            txtName.selectAll();
+            valid = false;
+        }
+        return valid;
     }
 
 }
