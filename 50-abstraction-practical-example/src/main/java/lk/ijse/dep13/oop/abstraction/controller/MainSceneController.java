@@ -46,7 +46,6 @@ public class MainSceneController {
 
     private void loadCustomers(){
         ArrayList<CustomerTo> customerList = dataAccess.findAllCustomers();
-        tblCustomers.getItems().clear();
         for (int i = 0; i < customerList.size(); i++) {
             CustomerTo customer = customerList.get(i);
             tblCustomers.getItems().add(new Customer(customer.id(), customer.name(), customer.address()));
