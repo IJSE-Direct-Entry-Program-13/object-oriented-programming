@@ -30,6 +30,11 @@ public class MainSceneController {
         tblCustomers.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("name"));
         tblCustomers.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("address"));
 
+        tblCustomers.getSelectionModel().selectedItemProperty().addListener(
+                (observable, oldValue, newValue) -> {
+            btnRemove.setDisable(newValue == null);
+        });
+
         setFormDisable(true);
         loadCustomers();
     }
@@ -52,6 +57,8 @@ public class MainSceneController {
         setFormDisable(false);
         txtId.setText(generateNewId());
         txtName.requestFocus();
+        tblCustomers.getSelectionModel().clearSelection();
+        btnRemove.setDisable(tblCustomers.getSelectionModel().getSelectedItem() == null);
     }
 
     private String generateNewId(){
