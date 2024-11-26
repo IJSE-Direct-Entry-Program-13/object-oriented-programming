@@ -33,6 +33,11 @@ public class MainSceneController {
         tblCustomers.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> {
             btnRemove.setDisable(newValue == null);
+            if (newValue != null){
+                txtId.setText(newValue.getId());
+                txtName.setText(newValue.getName());
+                txtAddress.setText(newValue.getAddress());
+            }
         });
 
         setFormDisable(true);
@@ -55,6 +60,8 @@ public class MainSceneController {
 
     public void btnNewCustomerOnAction(ActionEvent event) {
         setFormDisable(false);
+        txtName.clear();
+        txtAddress.clear();
         txtId.setText(generateNewId());
         txtName.requestFocus();
         tblCustomers.getSelectionModel().clearSelection();
@@ -71,7 +78,19 @@ public class MainSceneController {
     }
 
     public void btnRemoveOnAction(ActionEvent event) {
+        Customer selectedCustomer = tblCustomers.getSelectionModel().getSelectedItem();
 
+        if (dataAccess.deleteCustomer(selectedCustomer.getId())){
+            tblCustomers.getItems().remove(selectedCustomer);
+            if (tblCustomers.getItems().isEmpty()){
+                setFormDisable(true);
+                txtId.clear();
+                txtName.clear();
+                txtAddress.clear();
+            }
+        }else{
+            new Alert(Alert.AlertType.ERROR, "Failed to delete the customer, try again").show();
+        }
     }
 
     public void btnSaveOnAction(ActionEvent event) {
@@ -83,6 +102,7 @@ public class MainSceneController {
 
         if (dataAccess.saveCustomer(customer)){
             tblCustomers.getItems().add(new Customer(customer.id(), customer.name(), customer.address()));
+            btnNewCustomer.fire();
         }else{
             new Alert(Alert.AlertType.ERROR, "Failed to save the customer, try again").show();
             txtName.requestFocus();
