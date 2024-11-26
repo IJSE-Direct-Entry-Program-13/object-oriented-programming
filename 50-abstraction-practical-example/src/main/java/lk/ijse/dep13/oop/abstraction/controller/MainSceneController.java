@@ -9,6 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import lk.ijse.dep13.oop.abstraction.data.CustomerTo;
 import lk.ijse.dep13.oop.abstraction.data.DataAccess;
+import lk.ijse.dep13.oop.abstraction.data.FileDataAccess;
 import lk.ijse.dep13.oop.abstraction.data.InMemoryDataAccess;
 import lk.ijse.dep13.oop.abstraction.tm.Customer;
 
@@ -23,7 +24,7 @@ public class MainSceneController {
     public TextField txtAddress;
     public TextField txtId;
     public TextField txtName;
-    private final DataAccess dataAccess = new InMemoryDataAccess();
+    private final DataAccess dataAccess = new FileDataAccess();
 
     public void initialize() {
         tblCustomers.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("id"));

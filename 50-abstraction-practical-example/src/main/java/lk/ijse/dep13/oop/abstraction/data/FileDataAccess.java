@@ -24,11 +24,13 @@ public class FileDataAccess implements DataAccess {
     }
 
     private void readCustomersFromFile() {
-        try (var fis = new FileInputStream(dbFile);
-             var ois = new ObjectInputStream(fis)) {
-            customerList = (ArrayList<CustomerTo>) ois.readObject();
-        } catch (Exception e) {
-            e.printStackTrace();
+        if (dbFile.exists()) {
+            try (var fis = new FileInputStream(dbFile);
+                 var ois = new ObjectInputStream(fis)) {
+                customerList = (ArrayList<CustomerTo>) ois.readObject();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
