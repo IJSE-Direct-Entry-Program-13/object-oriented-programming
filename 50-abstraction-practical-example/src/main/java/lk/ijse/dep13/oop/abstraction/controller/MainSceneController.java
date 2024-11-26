@@ -47,7 +47,18 @@ public class MainSceneController {
     }
 
     public void btnNewCustomerOnAction(ActionEvent event) {
+        setFormDisable(false);
+        txtId.setText(generateNewId());
+        txtName.requestFocus();
+    }
 
+    private String generateNewId(){
+        // "C015" => "015" => 15
+        if (tblCustomers.getItems().isEmpty())  return "C001";
+
+        int newId = Integer.parseInt(tblCustomers.getItems().getLast().getId()
+                .replace("C", "")) + 1;
+        return "C%03d".formatted(newId);
     }
 
     public void btnRemoveOnAction(ActionEvent event) {
