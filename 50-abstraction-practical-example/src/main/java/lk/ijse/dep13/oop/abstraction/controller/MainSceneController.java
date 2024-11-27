@@ -21,7 +21,7 @@ public class MainSceneController {
     public TextField txtAddress;
     public TextField txtId;
     public TextField txtName;
-    private final DataAccess dataAccess = new CloudDataAccess();
+    private final DataAccess dataAccess = new FileDataAccess();
 
     public void initialize() {
         tblCustomers.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("id"));
