@@ -1,5 +1,6 @@
 package lk.ijse.dep13.oop.abstraction.data;
 
+import com.google.api.core.ApiFuture;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.firestore.CollectionReference;
 import com.google.cloud.firestore.Firestore;
@@ -38,11 +39,32 @@ public class CloudDataAccess implements DataAccess{
 
     @Override
     public boolean saveCustomer(CustomerTo customer) {
-        return false;
+        ArrayList<CustomerTo> customerList = findAllCustomers();
+        for (int i = 0; i < customerList.size(); i++) {
+            CustomerTo c = customerList.get(i);
+            if (c.id().matches(customer.id())) return false;
+        }
+
+        customerRef.add(customer);
+        return true;
     }
 
     @Override
     public boolean deleteCustomer(String id) {
+        ArrayList<CustomerTo> customerList = findAllCustomers();
+        for (int i = 0; i < customerList.size(); i++) {
+            CustomerTo c = customerList.get(i);
+            if (c.id().matches(id)){
+                try {
+                    QuerySnapshot querySnapshot = customerRef.whereEqualTo("id", c.id()).get().get();
+                    querySnapshot.getDocuments().getFirst().getReference().delete();
+                    return true;
+                }catch (Exception e){
+                    e.printStackTrace();
+                    return false;
+                }
+            }
+        }
         return false;
     }
 
@@ -51,7 +73,7 @@ public class CloudDataAccess implements DataAccess{
         final ArrayList<CustomerTo> customerList = new ArrayList<>();
 
         try {
-            QuerySnapshot query = customerRef.get().get();
+            QuerySnapshot query = customerRef.orderBy("id").get().get();
             List<QueryDocumentSnapshot> documentList = query.getDocuments();
 
             for (int i = 0; i < documentList.size(); i++) {
