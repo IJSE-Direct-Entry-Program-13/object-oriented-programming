@@ -28,11 +28,11 @@ interface Middle extends Top, MyInterface {
     boolean INITIALIZED = initialize();
     int VALUE = getValue();
 
-    public static int getValue(){
-        return VALUE;
+    static int getValue() {
+        return 10;
     }
 
-    public static void print(){
+    static void print() {
         System.out.println("Hey middle");
     }
 
@@ -40,6 +40,8 @@ interface Middle extends Top, MyInterface {
         System.out.println("Middle is being initialized");
         return true;
     }
+
+
 }
 
 interface Bottom extends Middle {
@@ -50,15 +52,18 @@ interface Bottom extends Middle {
         return true;
     }
 }
-class A implements Bottom{
 
+class A implements Bottom {
+    static {
+        System.out.println("A is being initialized");
+    }
 }
 
 public class Demo {
 
     public static void main(String[] args) {
         // Bottom.print();
-        // A.print();
+//         A.print();
         System.out.println(A.VALUE);
     }
 }
