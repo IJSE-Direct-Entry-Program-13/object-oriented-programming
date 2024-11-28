@@ -50,11 +50,15 @@ interface Bottom extends Middle {
         return true;
     }
 }
+class A implements Bottom{
+
+}
 
 public class Demo {
 
     public static void main(String[] args) {
         // Bottom.print();
-        System.out.println(Bottom.VALUE);
+        // A.print();
+        System.out.println(A.VALUE);
     }
 }
