@@ -1,0 +1,49 @@
+## Demo.class
+public class Demo extends Object {
+    public static void <clinit>(){}
+    public static void main(String[] args){
+        new MyClass();
+    }
+    public void <init>(){
+        super();
+    }
+}
+
+================================================
+## MyInterface1.class
+abstract interface MyInterface1 {
+    public static void <clinit>(){}
+    public abstract void printA();
+}
+
+================================================
+## MyInterface2.class
+abstract interface MyInterface1 {
+    public static void <clinit>(){}
+    public abstract void printB();
+}
+
+================================================
+## MySuperClass.class
+class MySuperClass extends Object {
+    public static void <clinit>(){}
+    public void <init>(){
+        super();
+    }
+}
+
+================================================
+## MyClass.class
+class MyClass extends MySuperClass implements
+                    MyInterface1, MyInterface2 {
+    public static void <clinit>(){}
+    public void <init>(){
+        super();
+    }
+    public void printA(){
+        System.out.println("MySuperClass printA()");
+    }
+    public void printB(){
+        System.out.println("MySuperClass printB()");
+    }
+}
