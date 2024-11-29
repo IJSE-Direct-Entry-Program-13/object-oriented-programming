@@ -4,6 +4,11 @@ public class Demo {
 
     public static void main(String[] args) {
         //System.out.println(SubInterface.VALUE);
+        SubInterface i = null;
+        // System.out.println(i.toString());
+        System.out.println(((Interface1)i).VALUE);
+        System.out.println(((Interface2)i).VALUE);
+        //System.out.println(i.VALUE);
         //SubInterface.print();
     }
 }
