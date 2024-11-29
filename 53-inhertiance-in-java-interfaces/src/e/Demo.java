@@ -3,8 +3,8 @@ package e;
 public class Demo {
 
     public static void main(String[] args) {
-        System.out.println(SubInterface.VALUE);
-        SubInterface.print();
+        //System.out.println(SubInterface.VALUE);
+        //SubInterface.print();
     }
 }
 
