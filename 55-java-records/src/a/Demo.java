@@ -140,4 +140,5 @@ class CustomerDto implements Serializable{
 //    }
 }
 
-record StudentDto(int id, String name, String address){}
+record StudentDto(int id, String name, String address) {
+}
