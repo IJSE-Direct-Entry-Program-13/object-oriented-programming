@@ -9,14 +9,14 @@ public class Demo {
         Status[] values = myStatus.values();
         System.out.println(values[0] == myStatus);
         //Status status = myStatus.valueOf(null);
-        Status status = myStatus.valueOf("NOT_COMPLETED");
+        Status status = Status.valueOf("NOT_COMPLETED");
         System.out.println(status.name());
         System.out.println(status.ordinal());
     }
 }
 
 enum Status {
-    COMPLETED, NOT_COMPLETED
+    COMPLETED, NOT_COMPLETED;
 }
 
 /*
