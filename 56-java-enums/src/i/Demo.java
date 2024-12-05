@@ -9,6 +9,19 @@ public class Demo {
     }
 }
 
+enum HelloEnum{
+    CONST1("ijse"), CONST2(10);
+    int x;
+
+    HelloEnum(String s){
+        this(10);   // <- You can place this method invocation expression statement if you want
+    }
+
+    HelloEnum(int x){
+
+    }
+}
+
 enum Status{
     OK, NOT_FOUND, ERROR
 }
