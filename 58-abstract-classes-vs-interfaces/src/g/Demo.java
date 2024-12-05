@@ -6,8 +6,8 @@ public class Demo {
     }
 }
 
-class MyAbstractClass{
-    // public default void myDefaultMethod(){}
+abstract class MyAbstractClass{
+     //public default void myDefaultMethod(){}
 }
 
 interface MyInterface{
