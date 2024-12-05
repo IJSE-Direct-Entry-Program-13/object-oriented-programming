@@ -21,6 +21,24 @@ record Customer(int id, String name){
 //        if (name == null || name.isEmpty()) throw new IllegalArgumentException();
 //    }
 
+    // You can't explicitly define instance variables or instance initializers
+//    int x = 10;
+//    {
+//
+//    }
+
+    // But you can define static variables and static initializers if you want
+    static int x = 10;
+    static {
+
+    }
+
+    // Except for nested classes any other nested type in java record is implicitly static
+    class MyNestedClass{}
+    static interface MyInterface{}
+    static enum MyEnum{}
+    static @interface MyAnnotation{}
+
     // You use only "Canonical constructor" only if you have to create final/leaf/read-only parameters
     Customer(final int id, final String name) { // This is called "Canonical Constructor"
      // super();
