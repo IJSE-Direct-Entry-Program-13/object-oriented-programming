@@ -20,11 +20,13 @@ public class Demo {
         Super superRef = (Super) ref;       // Identity Conversion
         Object objectRef = (Object) ref;    // Widening Reference Conversion
         Sub subRef = (Sub) ref;             // Narrowing Reference Conversion
+
+        // 1. Identity Conversion
+        // 2. Widening Primitive/Reference Conversion
+        // 3. Narrowing Primitive/Reference Conversion
+        // 4. Boxing Conversion + Widening Reference Conversion
+        // 5. Unboxing Conversion + Widening Primitive Conversion
     }
 }
-
-class Super {
-}
-
-class Sub extends Super {
-}
+class Super {}
+class Sub extends Super {}
